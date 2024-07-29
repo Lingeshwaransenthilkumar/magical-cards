@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <i class="fa-brands fa-instagram" style="font-size: 100px;"></i>
+                <h2>Instagram</h2>
+                <p>Followers <span>33k</span></p>
+                <a href="">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Follow me</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <i class="fa-brands fa-github" style="font-size: 100px;"></i>
+                <h2>GitHub</h2>
+                <p>Followers <span>330</span></p>
+                <a href="">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Follow me</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <i class="fa-brands fa-linkedin" style="font-size: 100px;"></i>
+                <h2>LinkedIn</h2>
+                <p>Followers <span>650</span></p>
+                <a href="">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Follow me</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        const cards = Array.from(document.querySelectorAll(".card"));
+        const cardsContainer = document.querySelector(".cards");
+
+        cardsContainer.addEventListener("mousemove",(e)=>{
+            for(const card of cards){
+                const rect = card.getBoundingClientRect();
+                x=e.clientX - rect.left;
+                y=e.clientY - rect.top;
+
+                card.style.setProperty("--mouse-x",`${x}px`);
+                card.style.setProperty("--mouse-y",`${y}px`);
+
+
+            }
+        })
+
+
+    </script>
+</body>
+</html>
